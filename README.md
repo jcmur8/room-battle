@@ -32,3 +32,8 @@ Room Monster Battle supports English and Spanish without an internet translation
 - All new countdown and coaching text is available in English and Spanish.
 
 Existing schema-version-3 installations migrate to schema version 4 without clearing family profiles, history, settings, PIN data, or an active battle. If an older active battle has no per-mission countdown state, migration gives its current mission a fresh five-minute countdown.
+
+
+## v1.2.1 Safari inspection fix
+
+Reformatted `js/views/inspection.js` into Safari-friendly multi-line JavaScript and bumped the service-worker cache to `room-monster-v1.2.1`. No data-schema change is required.

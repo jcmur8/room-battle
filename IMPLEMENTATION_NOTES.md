@@ -50,3 +50,8 @@ Current schema version: 2. Migration from version 1 adds reward defaults and fil
 - `js/audio.js` now synthesizes mission-start, shot-clock, mission-complete, and final-victory sound sequences with Web Audio. No copyrighted or remote sound assets were added.
 - Final mission completion now passes through the normal mission celebration before inspection/victory, ensuring every completed step receives immediate positive feedback.
 - Service-worker cache version advanced to `room-monster-v1.2.0` and caches `js/effects.js`.
+
+
+## v1.2.1 Safari inspection fix
+
+Reformatted `js/views/inspection.js` into Safari-friendly multi-line JavaScript and bumped the service-worker cache to `room-monster-v1.2.1`. No data-schema change is required.

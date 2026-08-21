@@ -52,3 +52,8 @@ Open `tests/test-runner.html` through the local server. Tests cover role restric
 - [ ] Reach final victory and confirm the larger celebration and extended fanfare; verify reduced-motion mode remains comfortable.
 - [ ] Start a new battle after the deliberate Start Battle tap and confirm the mission-start alarm plays at a moderate volume.
 - [ ] Repeat countdown, expiry coaching, and celebration checks in both English and Spanish.
+
+
+## v1.2.1 Safari inspection fix
+
+Reformatted `js/views/inspection.js` into Safari-friendly multi-line JavaScript and bumped the service-worker cache to `room-monster-v1.2.1`. No data-schema change is required.

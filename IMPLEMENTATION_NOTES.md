@@ -33,3 +33,20 @@ Current schema version: 2. Migration from version 1 adds reward defaults and fil
 - Schema version advanced from 2 to 3. Migration preserves existing profiles, history, settings, custom missions, and active sessions while adding bilingual factory fields and defaulting existing users to English.
 - Custom mission or reward text that has no Spanish-specific value falls back to the saved original text; it is never machine-translated or sent to an external service.
 - Service-worker cache advanced to `room-monster-v1.1.0` and now precaches `js/i18n.js`.
+
+## v1.1.1 Safari startup patch
+
+- Rewrote `js/views/home.js` as formatted, conservative JavaScript to eliminate the Safari startup parse error reported as `SyntaxError: Unexpected token '}'. Expected ')' to end an argument list.`
+- Bumped the service-worker cache from `room-monster-v1.1.0` to `room-monster-v1.1.1` so previously cached JavaScript is replaced after deployment.
+- No data schema change was made; existing IndexedDB family data remains compatible.
+
+## Version 1.2.0 — participants, countdowns and celebrations
+
+- Schema advanced from 3 to 4. Migration preserves existing configuration/history/security data and adds `maxParticipants: 8`, `stepCountdownSeconds: 300`, plus per-active-session `stepTimer` state when required.
+- Participant capacity is now eight. First-run setup can create 2–8 heroes, and Parent → Profiles can add profiles until the same limit is reached. All active participants are included in new session snapshots and receive mission assignments/confirmation credit.
+- Each session now stores a five-minute per-mission `stepTimer`. Expiration is motivational only: it increments an attempt counter, plays a synthesized shot-clock cue, shows/speaks supportive copy, and restarts at five minutes. It never fails a mission or removes earned credit.
+- Per-mission countdown state pauses with the battle and excludes hidden-page time when the existing >30-second visibility rule applies.
+- `js/effects.js` provides dependency-free DOM confetti. It creates no remote requests and is suppressed by `prefers-reduced-motion` or the in-app reduced-motion setting.
+- `js/audio.js` now synthesizes mission-start, shot-clock, mission-complete, and final-victory sound sequences with Web Audio. No copyrighted or remote sound assets were added.
+- Final mission completion now passes through the normal mission celebration before inspection/victory, ensuring every completed step receives immediate positive feedback.
+- Service-worker cache version advanced to `room-monster-v1.2.0` and caches `js/effects.js`.

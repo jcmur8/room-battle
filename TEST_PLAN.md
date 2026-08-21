@@ -36,3 +36,19 @@ Open `tests/test-runner.html` through the local server. Tests cover role restric
 5. With speech enabled, tap the mission audio control in both languages and confirm Safari uses an appropriate English or Spanish voice when the device provides one; verify text remains available if speech synthesis has no matching voice.
 6. Start a session in one language, switch languages mid-session, and confirm the same session, mission index, confirmations, roles, timer, collectibles, and inspection state remain intact.
 7. Migrate an existing schema-v2 backup and confirm profiles/history remain intact and the language defaults to English until changed.
+
+## v1.2 acceptance additions
+
+- [ ] Create 3–8 heroes during first-run setup and confirm all active heroes appear in the battle briefing and mission confirmation controls.
+- [ ] Add another hero later under Parent → Profiles and confirm the next new battle snapshots that participant.
+- [ ] Verify each mission begins at 5:00 and counts down once per second without making completion dependent on the timer.
+- [ ] Let a mission timer reach 0:00; confirm the shot-clock alert plays, encouraging text appears, spoken coaching uses the selected language when speech is enabled, and the countdown resets to 5:00.
+- [ ] Let the timer expire twice and confirm it continues to reset without removing points, confirmations, or progress.
+- [ ] Press More Time and confirm the current countdown resets to 5:00 without penalty.
+- [ ] Pause a battle and verify the per-mission countdown stops; resume and confirm it continues from the remaining time.
+- [ ] Hide the page for more than 30 seconds and verify hidden time is excluded from both elapsed and per-mission countdown timing.
+- [ ] Complete an intermediate mission and confirm confetti plus a cheerful success jingle; verify reduced-motion mode suppresses confetti.
+- [ ] Complete the last mission and confirm its celebration still appears before parent inspection (when inspection is enabled).
+- [ ] Reach final victory and confirm the larger celebration and extended fanfare; verify reduced-motion mode remains comfortable.
+- [ ] Start a new battle after the deliberate Start Battle tap and confirm the mission-start alarm plays at a moderate volume.
+- [ ] Repeat countdown, expiry coaching, and celebration checks in both English and Spanish.

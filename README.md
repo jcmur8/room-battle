@@ -20,3 +20,15 @@ The four-digit PIN is never stored directly. PBKDF2-SHA-256 with a random 16-byt
 ## English / Spanish language switch
 
 Room Monster Battle supports English and Spanish without an internet translation service. Tap **ES** in the top-right header to switch from English to Spanish; when Spanish is active the button shows **EN** to switch back. Parents can also choose the interface language during first-run setup or under **Parent → Settings**. The preference is saved in IndexedDB and survives reloads, Home Screen launches, and offline use. The factory missions include authored Spanish titles, instructions, and safety notes. Custom family text falls back to the wording entered by the parent when no translated version is stored.
+
+## Version 1.2 enhancements
+
+- First-run setup and Parent → Profiles support up to eight active heroes/participants.
+- Every mission starts with a five-minute countdown. Reaching 0:00 does not fail the mission or remove credit; a locally synthesized shot-clock alert plays, an encouraging message appears, and the timer automatically resets to 5:00.
+- **More Time** resets the current mission countdown to five minutes without penalty.
+- Completing every mission triggers confetti (unless reduced motion is enabled) and a cheerful locally synthesized success jingle.
+- The final victory uses a larger two-wave confetti celebration and an extended victory fanfare.
+- Beginning a new battle plays a short kid-friendly mission alarm after audio has been activated by the user's deliberate Start Battle tap.
+- All new countdown and coaching text is available in English and Spanish.
+
+Existing schema-version-3 installations migrate to schema version 4 without clearing family profiles, history, settings, PIN data, or an active battle. If an older active battle has no per-mission countdown state, migration gives its current mission a fresh five-minute countdown.
